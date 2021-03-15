@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class mains extends UserMainCode {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("enter string");
+		String text = scan.nextLine();
+		scanStarNeighbors(text);
+	}
+}class UserMainCode {
+	static boolean scanStarNeighbors(String text) {
+		boolean result;
+		String[] array = text.split("\\*");
+		int len = array.length;
+		char first = array[0].charAt(len - 1);
+		char second = array[1].charAt(0);
+		if (first == second) {
+			result = true;
+			System.out.println("TRUE");
+		} else {
+			result = false;
+			System.out.println("FALSE");
+		}
+		return result;
+	}
+}
